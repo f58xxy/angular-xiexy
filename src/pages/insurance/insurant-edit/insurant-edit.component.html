@@ -1,0 +1,29 @@
+<!--<button routerLink="/insurance">返回</button>-->
+
+<p>
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{planId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+保险名称：
+<input type="text" [(ngModel)]="insurant.planName"/>
+</div>
+
+<div>
+被保险者名：
+<input type="text" [(ngModel)]="insurant.name"/>
+</div>
+
+<div>
+被保险者性别：
+<select [(ngModel)]="insurant.sex">
+  <option value="M">男</option>
+  <option value="F">女</option>
+</select>
+</div>
+
+
+
+<button routerLink="/insurant" (click)="save()">提交</button>
